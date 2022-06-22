@@ -21,7 +21,7 @@ public class FileController {
 
     @GetMapping("/")
     public String index() throws IOException {
-        File f = new File("testtest", "txt", "test");
+        File f = new File("ts", "txt", "test");
         serviceClass.write(f);
         String str = serviceClass.read(f.getFilename());
         return str;
