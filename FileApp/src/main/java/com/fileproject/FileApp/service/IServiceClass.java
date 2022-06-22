@@ -1,4 +1,4 @@
-package com.fileproject.FileApp;
+package com.fileproject.FileApp.service;
 
 import java.io.IOException;
 

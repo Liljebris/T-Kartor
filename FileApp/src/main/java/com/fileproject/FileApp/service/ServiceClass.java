@@ -1,4 +1,4 @@
-package com.fileproject.FileApp;
+package com.fileproject.FileApp.service;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -6,6 +6,8 @@ import java.io.IOException;
 
 
 import org.springframework.stereotype.Service;
+
+import com.fileproject.FileApp.model.File;
 
 @Service
 public class ServiceClass implements IServiceClass {

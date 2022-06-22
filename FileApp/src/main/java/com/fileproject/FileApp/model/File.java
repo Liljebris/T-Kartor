@@ -1,4 +1,4 @@
-package com.fileproject.FileApp;
+package com.fileproject.FileApp.model;
 
 public class File {
 
