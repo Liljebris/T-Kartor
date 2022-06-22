@@ -5,14 +5,14 @@ public class File {
     private String content;
     private String type;
     private String name;
-    private String fileName;
+    private String filename;
 
     public File(String content, String type, String name) {
 
         this.content = content;
         this.type = type;
         this.name = name;
-        this.fileName = name + type;
+        this.filename = name + "." + type;
     }
 
     public String getContent() {
@@ -28,7 +28,7 @@ public class File {
     }
 
     public void setType(String type) {
-        this. fileName = name + type;
+        this. filename = this.name + "." + type;
         this.type = type;
     }
 
@@ -37,16 +37,16 @@ public class File {
     }
 
     public void setName(String name) {
-        this. fileName = name + type;
+        this.filename = name + "." + this.type;
         this.name = name;
     }
 
-    public String getFileName() {
-        return this.content;
+    public String getFilename() {
+        return this.filename;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
     
 }
