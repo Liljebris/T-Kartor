@@ -17,6 +17,10 @@ public class FileAppApplication {
 		ServiceClass s = new ServiceClass();
 
 		s.write(testFile);
+
+		String str = s.read(testFile.getFilename());
+
+		System.out.print(str);
 	}
 
 }
