@@ -3,9 +3,10 @@ package com.fileproject.FileApp.controller;
 import java.io.IOException;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fileproject.FileApp.model.File;
+
 import com.fileproject.FileApp.service.ServiceClass;
 
 
@@ -22,12 +23,14 @@ public class FileController {
 
     
 
-    @GetMapping("/")
-    public String index() throws IOException {
-        File f = new File("ts", "txt", "test");
-        serviceClass.write(f);
-        String str = serviceClass.read(f.getFilename());
-        return str;
-    
+    @PostMapping("/postText")
+    public void postText(String content) throws IOException {
+        serviceClass.write(content);
     };
+
+    @GetMapping("/getText")
+    public String getText() throws IOException {
+        return serviceClass.read();
+    }
+
 }
