@@ -39,7 +39,9 @@ public class ServiceClass implements IServiceClass {
         try (
 
             // Loading the file reader with a filepath. Temporary solution
+
             FileReader fr = new FileReader("C:\\Users\\lilje\\OneDrive\\Dokument\\GitHub\\INFC40\\T-Kartor\\text.txt")) {
+
             
             // Looping through the filetext and load into string    
             while ((i = fr.read()) != -1) {
