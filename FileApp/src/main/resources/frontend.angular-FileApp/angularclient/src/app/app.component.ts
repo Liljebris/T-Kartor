@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, NgZone, ViewChild} from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -12,3 +13,4 @@ export class AppComponent {
     this.title = 'File Application Client';
   }
 }
+
