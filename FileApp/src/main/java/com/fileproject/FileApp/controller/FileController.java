@@ -20,17 +20,15 @@ public class FileController {
     }
         
 
-    
-    // GET request for retrieving the filecontent
-    @GetMapping("/getText")
-    public String getText() throws IOException {
-        String text =  serviceClass.read();
-        return text;
+    @PostMapping("/postText")
+    public void postText(String content) throws IOException {
+        serviceClass.write(content);
     };
 
-    // POST request for pasting text into the file
-    @PostMapping("/postText")
-    public void postText(String text) throws IOException {
-        serviceClass.write(text);
+    @GetMapping("/getText")
+    public String getText() throws IOException {
+        return serviceClass.read();
     }
+
+
 }

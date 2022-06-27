@@ -25,7 +25,6 @@ public class ServiceClass implements IServiceClass {
             fWriter.write(content.charAt(i));
 
         fWriter.close();
-
     }
 
     // Read file method taken from https://www.geeksforgeeks.org/different-ways-reading-text-file-java/
@@ -37,7 +36,9 @@ public class ServiceClass implements IServiceClass {
         try (
 
             // Loading the file reader with a filepath. Temporary solution
+
             FileReader fr = new FileReader("C:\\Users\\lilje\\GitHub\\T-Kartor\\file.txt")) {
+
             
             // Looping through the filetext and load into string    
             while ((i = fr.read()) != -1) {
