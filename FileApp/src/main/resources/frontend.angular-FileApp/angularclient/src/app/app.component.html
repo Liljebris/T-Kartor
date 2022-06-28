@@ -6,10 +6,10 @@
           <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
           <ul class="text-center list-inline py-3">
             <li class="list-inline-item">
-              <a routerLink="/getText" class="btn btn-info">Get Text</a>
+              <a routerLink="/postText" class="btn btn-info">Post Text</a>
                 </li>
             <li class="list-inline-item">
-              <a routerLink="/postText" class="btn btn-info">Post Text</a>
+              <a routerLink="/getText" class="btn btn-info">Get Text</a>
                 </li>
           </ul>
         </div>
@@ -17,6 +17,15 @@
       <router-outlet></router-outlet>
     </div>
   </div>
+</div>
+<p style="text-align:center">Post your text here!</p>
+<div class="postTextBox">
+  <text-field-autosize-textarea-example></text-field-autosize-textarea-example>
+</div>
+
+<p style="text-align:center">Get your text here!</p>
+<div class="getTextBox">
+  <text-field-autosize-textarea-example></text-field-autosize-textarea-example>
 </div>
 
 <router-outlet></router-outlet>
