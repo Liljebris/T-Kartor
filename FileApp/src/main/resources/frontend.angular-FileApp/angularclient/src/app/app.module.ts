@@ -3,33 +3,36 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 import { MaterialExampleModule } from '../material.module';
-import { TextFieldAutosizeTextareaExample } from './text-field-autosize-textarea-example';
+import { TextFieldAutosizeTextareaExample } from './text-box/text-field-autosize-textarea-example';
 import { MatNativeDateModule } from '@angular/material/core';
+import { FileComponent } from './file/file.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    TextFieldAutosizeTextareaExample
-
-
+    TextFieldAutosizeTextareaExample,
+    FileComponent,
   ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     MaterialExampleModule,
     ReactiveFormsModule,
     MatNativeDateModule,
+    FileComponent,
   ],
   providers: [],
   bootstrap: [
     AppComponent,
     TextFieldAutosizeTextareaExample,
+
 ]
 
 })

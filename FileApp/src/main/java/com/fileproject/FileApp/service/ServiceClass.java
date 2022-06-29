@@ -4,6 +4,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import com.fileproject.FileApp.model.File;
 
 import org.springframework.stereotype.Service;
 
@@ -14,10 +15,11 @@ public class ServiceClass implements IServiceClass {
     // Write to file method, taken from https://www.geeksforgeeks.org/filewriter-class-in-java/
     public void write(String content) throws IOException {
         
+
         // There is still a need for some sort of validation for this method.
 
         // FileWriter object loaded with filename
-        FileWriter fWriter = new FileWriter("file.txt");
+        FileWriter fWriter = new FileWriter("test.txt");
         
         // Goes through the characters in string "content"
         // from file class and write them into the created file 
@@ -37,7 +39,7 @@ public class ServiceClass implements IServiceClass {
 
             // Loading the file reader with a filepath. Temporary solution
 
-            FileReader fr = new FileReader("C:\\Users\\lilje\\GitHub\\T-Kartor\\file.txt")) {
+            FileReader fr = new FileReader("C:\\Users\\lilje\\GitHub\\T-Kartor\\FileApp\\test.txt")) {
 
             
             // Looping through the filetext and load into string    
