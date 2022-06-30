@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import com.fileproject.FileApp.model.File;
+
 
 import org.springframework.stereotype.Service;
 
@@ -27,6 +27,8 @@ public class ServiceClass implements IServiceClass {
             fWriter.write(content.charAt(i));
 
         fWriter.close();
+
+        this.read();
     }
 
     // Read file method taken from https://www.geeksforgeeks.org/different-ways-reading-text-file-java/

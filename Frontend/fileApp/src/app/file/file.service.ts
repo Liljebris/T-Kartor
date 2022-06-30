@@ -15,17 +15,14 @@ export class FileService {
 
   private getTextUrl: string;
   private postTextUrl: string;
+  public message: string;
 
   constructor(private http: HttpClient) {
     this.getTextUrl = 'http://localhost:8080/getText';
     this.postTextUrl = 'http://localhost:8080/postText';
+    this.message = "";
   }
 
-
-
-  // getTextFromFile(file: File): Observable<File> {
-  //   return this.http.get<File>(this.getTextUrl, file, httpOptions);
-  // }
 
   // getTextFromFile2(): string {
 
@@ -47,6 +44,11 @@ export class FileService {
         'Content-Type': 'text/plain'
       })
     })
+  }
+
+  getTextFromFile() {
+    this.http.get(this.getTextUrl, {responseType: 'text'}).subscribe(data => this.message = data);
+    console.log(JSON.stringify(this.message));
   }
 
   // public postText(file: File): String {

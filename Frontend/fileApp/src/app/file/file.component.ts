@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 
 import { FileService } from './file.service';
 
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { FormControl } from "@angular/forms";
 
@@ -15,7 +15,8 @@ import { FormControl } from "@angular/forms";
 
 export class FileComponent implements OnInit {
 
-  content = "";
+  giveableContent = "";
+  receivableContent = "";
   result: string | undefined;
 
 
@@ -45,8 +46,20 @@ export class FileComponent implements OnInit {
 
   send() {
     alert('success');
-    this.fileService.send(this.content).subscribe((data: any) =>
+    this.fileService.send(this.giveableContent).subscribe((data: any) =>
     {this.result = data})
+  }
+
+  get() {
+    let result: string;
+    result = "hjklkh";
+
+    this.fileService.getTextFromFile()
+
+    //.pipe(map(response => response.toString)).subscribe((data: any) => result = data);
+
+
+
   }
 
 

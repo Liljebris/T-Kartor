@@ -2,6 +2,7 @@ package com.fileproject.FileApp.controller;
 
 import java.io.IOException;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,12 +31,12 @@ public class FileController {
         System.out.println(content);
         serviceClass.write(content);
 
-        //return content;
+
     };
 
-    @GetMapping("/getText")
-    public String getText() throws IOException {
-        return serviceClass.read();
+    @RequestMapping(value = "/getText", method = RequestMethod.GET)
+    public ResponseEntity<String> getText() throws IOException {
+        return ResponseEntity.ok(serviceClass.read());
     }
 
 

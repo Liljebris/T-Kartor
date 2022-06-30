@@ -1,11 +1,19 @@
 <h2>test</h2>
 <div class="fileArea">
-  <label for="content">Content: </label>
-  <input type="text" [(ngModel)]="content">
+  <label for="content">giveableContent: </label>
+  <input type="text" [(ngModel)]="giveableContent">
 </div>
 <div>
 
   <button id="btn-test" (click)="send()">test</button>
   </div>
+
+<div>
+  <label for="content">receivableContent: </label>
+  <input type="text" [(ngModel)]="receivableContent">
+
+  <button id="btn-test" (click)="get()">test</button>
+
+</div>
 
 
