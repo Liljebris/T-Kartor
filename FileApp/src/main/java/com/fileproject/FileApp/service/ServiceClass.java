@@ -17,7 +17,7 @@ public class ServiceClass implements IServiceClass {
         
 
         // There is still a need for some sort of validation for this method.
-
+        System.out.println(content + " testestest");
         // FileWriter object loaded with filename
         FileWriter fWriter = new FileWriter("test.txt");
         
@@ -47,7 +47,7 @@ public class ServiceClass implements IServiceClass {
                 fileText += (char)i;
             }
         }
-
+        System.out.println(fileText);
         return fileText;
 
     }
