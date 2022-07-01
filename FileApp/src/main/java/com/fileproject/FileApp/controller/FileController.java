@@ -23,11 +23,21 @@ public class FileController {
         this.serviceClass = serviceClass;
     }
         
+    
+    /** 
+     * @param content
+     * @throws IOException
+     */
     //RequestMapping HTTP method parameter with specified paraneter POST
     @RequestMapping(value = "/postText", method = RequestMethod.POST, consumes = "text/plain")
     public void postText(@RequestBody String content) throws IOException {
         serviceClass.write(content);
     };
+    
+    /** 
+     * @return ResponseEntity<String>
+     * @throws IOException
+     */
     //RequestMapping HTTP method parameter with specified paraneter GET
     @RequestMapping(value = "/getText", method = RequestMethod.GET)
     public ResponseEntity<String> getText() throws IOException {

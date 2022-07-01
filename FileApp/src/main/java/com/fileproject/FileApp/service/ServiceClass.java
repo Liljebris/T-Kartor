@@ -9,6 +9,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class ServiceClass implements IServiceClass {
 
+  
+  /** 
+   * @param content
+   * @throws IOException
+   */
   // Write to file method, taken (but modified) from
   // https://www.geeksforgeeks.org/filewriter-class-in-java/
   public void write(String content) throws IOException {
@@ -32,6 +37,11 @@ public class ServiceClass implements IServiceClass {
     fWriter.close();
   }
 
+  
+  /** 
+   * @return String
+   * @throws IOException
+   */
   // Read file method, taken (but modified) from
   // https://www.geeksforgeeks.org/different-ways-reading-text-file-java/
   public String read() throws IOException {
