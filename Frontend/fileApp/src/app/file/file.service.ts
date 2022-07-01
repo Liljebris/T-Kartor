@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -15,7 +14,7 @@ export class FileService {
   constructor(private http: HttpClient) {
     this.getTextUrl = 'http://localhost:8080/getText';
     this.postTextUrl = 'http://localhost:8080/postText';
-    this.message = this.getTextFromFile(); // Load message
+    this.message = this.getTextFromFile(); // Loading message for an initial GET request
   }
 
   //POST request for /postText url endpoint with JSON object
