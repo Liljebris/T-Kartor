@@ -3,9 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
-const httpOptions = {
-  headers: { 'Content-Type': 'application/json' },
-};
 
 @Injectable({
   providedIn: 'root',
@@ -13,19 +10,15 @@ const httpOptions = {
 export class FileService {
   private getTextUrl: string;
   private postTextUrl: string;
-  public message: string;
+  private message: string;
 
   constructor(private http: HttpClient) {
     this.getTextUrl = 'http://localhost:8080/getText';
     this.postTextUrl = 'http://localhost:8080/postText';
-    this.message = '';
+    this.message = this.getTextFromFile(); // Load message
   }
 
-
-  save(content: string) {
-    this.http.post<string>(this.postTextUrl, content);
-  }
-
+  //POST request for /postText url endpoint with JSON object
   postTextToFile(s: string): Observable<any> {
     return this.http.post(this.postTextUrl, s, {
       headers: new HttpHeaders({
@@ -34,6 +27,9 @@ export class FileService {
     });
   }
 
+  //GET request for /getText url endpoint.
+  //Should not have subscribe here. Because of state change
+  //you're forced to press button twice to get result after change.
   getTextFromFile(): string {
     this.http
       .get(this.getTextUrl, { responseType: 'text' })

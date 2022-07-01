@@ -1,13 +1,20 @@
-<h2>test</h2>
-<div class="fileArea">
-  <label for="content">giveableContent: </label>
-  <input type="text" [(ngModel)]="giveableContent">
+<div class="postArea">
+  <h2>Textbox to send text into file</h2>
+  <label for="post">Write something and post to file</label>
+  <div>
+    <input type="text" [(ngModel)]="giveableContent">
+  </div>
+  <div style="margin-top: 10px;">
+    <button type=button id="btn-send" (click)="send()">post</button>
+  </div>
 </div>
-<div>
-  <button id="btn-send" (click)="send()">test</button>
-</div>
-<div>
-  <label for="content">receivableContent: </label>
-  <input type="text" [(ngModel)]="receivableContent">
-  <button id="btn-get" (click)="get()">test</button>
+
+<div class="getArea" style="margin-top: 50px;">
+  <label for="get">Press button and get text from file</label>
+  <div>
+    <input type="text" [(ngModel)]="receivableContent">
+  </div>
+  <div style="margin-top: 10px;">
+  <button type=button id="btn-get" (click)="get()">get</button>
+  </div>
 </div>
