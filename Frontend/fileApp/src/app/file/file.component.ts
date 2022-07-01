@@ -19,7 +19,7 @@ export class FileComponent implements OnInit {
 
   ngOnInit() {}
 
-  // Method that subscribes to the data
+
   send() {
     this.fileService
       .postTextToFile(this.giveableContent)
@@ -28,6 +28,7 @@ export class FileComponent implements OnInit {
       });
   }
 
+  // Method loads
   get() {
     this.receivableContent = this.fileService.getTextFromFile();
   }
