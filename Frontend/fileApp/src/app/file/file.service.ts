@@ -3,16 +3,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
-
 const httpOptions = {
-  headers: { 'Content-Type': 'application/json' }
-}
+  headers: { 'Content-Type': 'application/json' },
+};
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FileService {
-
   private getTextUrl: string;
   private postTextUrl: string;
   public message: string;
@@ -20,38 +18,26 @@ export class FileService {
   constructor(private http: HttpClient) {
     this.getTextUrl = 'http://localhost:8080/getText';
     this.postTextUrl = 'http://localhost:8080/postText';
-    this.message = "";
+    this.message = '';
   }
 
 
-  // getTextFromFile2(): string {
-
-  // }
-
-
-  postTextToFile(file: File): Observable<File> {
-    console.log(file.text);
-    return this.http.post<File>(this.postTextUrl, file, httpOptions);
-  }
   save(content: string) {
     this.http.post<string>(this.postTextUrl, content);
   }
 
-  send(s: string): Observable<any> {
-    console.log("hello from fileservice");
+  postTextToFile(s: string): Observable<any> {
     return this.http.post(this.postTextUrl, s, {
       headers: new HttpHeaders({
-        'Content-Type': 'text/plain'
-      })
-    })
+        'Content-Type': 'text/plain',
+      }),
+    });
   }
 
-  getTextFromFile() {
-    this.http.get(this.getTextUrl, {responseType: 'text'}).subscribe(data => this.message = data);
-    console.log(JSON.stringify(this.message));
+  getTextFromFile(): string {
+    this.http
+      .get(this.getTextUrl, { responseType: 'text' })
+      .subscribe((data) => (this.message = data));
+    return this.message;
   }
-
-  // public postText(file: File): String {
-  //   this.http.post<File>(this.postTextUrl, file.);
-  // }
 }
