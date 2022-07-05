@@ -9,8 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ServiceClass implements IServiceClass {
 
-  
-  /** 
+  /**
    * @param content
    * @throws IOException
    */
@@ -37,8 +36,7 @@ public class ServiceClass implements IServiceClass {
     fWriter.close();
   }
 
-  
-  /** 
+  /**
    * @return String
    * @throws IOException
    */

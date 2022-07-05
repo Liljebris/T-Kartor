@@ -2,7 +2,11 @@
   <h2>Textbox to send text into file</h2>
   <label for="post">Write something and post to file</label>
   <div>
-    <input type="text" [(ngModel)]="giveableContent">
+    <input [readonly]="isReadOnly" type="text" [(ngModel)]="giveableContent">
+  </div>
+  <div>
+    <input type="checkbox" [checked]="!isReadOnly" (click)="toggleCool()">
+    Are you cool enough to post?
   </div>
   <div style="margin-top: 10px;">
     <button type=button id="btn-send" (click)="send()">post</button>

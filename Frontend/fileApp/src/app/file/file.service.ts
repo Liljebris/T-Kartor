@@ -9,15 +9,15 @@ import { Observable } from 'rxjs';
 export class FileService {
   private getTextUrl: string;
   private postTextUrl: string;
-  private message: string;
+
 
   constructor(private http: HttpClient) {
     this.getTextUrl = 'http://localhost:8080/getText';
     this.postTextUrl = 'http://localhost:8080/postText';
-    this.message = this.getTextFromFile(); // Loading message for an initial GET request
   }
 
-  //POST request for /postText url endpoint with JSON object
+  // POST request for "/postText" url endpoint
+  // Interpreting the original media type as text
   postTextToFile(s: string): Observable<any> {
     return this.http.post(this.postTextUrl, s, {
       headers: new HttpHeaders({
@@ -26,13 +26,10 @@ export class FileService {
     });
   }
 
-  //GET request for /getText url endpoint.
-  //Should not have subscribe here. Because of state change
-  //you're forced to press button twice to get result after change.
-  getTextFromFile(): string {
-    this.http
-      .get(this.getTextUrl, { responseType: 'text' })
-      .subscribe((data) => (this.message = data));
-    return this.message;
+  // Get request from "/getText" url endpoint, given value text
+  getTextFromFile(): Observable<string>  {
+    return this.http.get(this.getTextUrl, {
+      responseType: 'text'
+    });
   }
 }
